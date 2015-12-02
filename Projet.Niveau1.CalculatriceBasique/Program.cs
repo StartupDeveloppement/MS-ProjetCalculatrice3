@@ -32,7 +32,7 @@ namespace Projet.Niveau1.CalculatriceBasique
             double secondChiffre = 0.0;
             Calcul calcul = new Calcul(premierChiffre, secondChiffre);
             double resultat;
-            //try parse
+            
             string saisieClavier = Console.ReadLine();
             int result;
             bool resultatParse = int.TryParse(saisieClavier, out result);

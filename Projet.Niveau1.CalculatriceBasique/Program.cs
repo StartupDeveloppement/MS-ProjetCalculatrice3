@@ -4,14 +4,18 @@ namespace Projet.Niveau1.CalculatriceBasique
 {
     internal class Program
     {
-        private static object secondChiffre;
-
+        
         private static void Main(string[] args)
         {
             Affichage.Afficher("Bonjour !");
             TypeOperation();
         }
-
+        
+        private static double Chiffre()
+        {
+            double premierChiffre = Convert.ToDouble(Console.ReadLine());
+            return premierChiffre;
+        }
       
 
         private static void TypeOperation()
@@ -43,9 +47,9 @@ namespace Projet.Niveau1.CalculatriceBasique
                 {
                 case 1:
                     Affichage.AfficherSansRetourLigne("Premier nombre :");
-                    premierChiffre = Convert.ToDouble(Console.ReadLine());
+                    premierChiffre = Chiffre();
                     Affichage.AfficherSansRetourLigne("Second nombre :");
-                    secondChiffre = Convert.ToDouble(Console.ReadLine());
+                    secondChiffre = Chiffre();
 
                     calcul = new Calcul(premierChiffre, secondChiffre);
                     resultat = calcul.addition();
@@ -55,9 +59,9 @@ namespace Projet.Niveau1.CalculatriceBasique
 
                 case 2:
                     Affichage.AfficherSansRetourLigne("Premier nombre :");
-                    premierChiffre = Convert.ToDouble(Console.ReadLine());
+                    premierChiffre = Chiffre();
                     Affichage.AfficherSansRetourLigne("Second nombre :");
-                    secondChiffre = Convert.ToDouble(Console.ReadLine());
+                    secondChiffre = Chiffre();
                     calcul = new Calcul(premierChiffre, secondChiffre);
                     resultat = calcul.soustraction();
                     Affichage.Afficher("Le résultat est : " + resultat);
@@ -65,9 +69,9 @@ namespace Projet.Niveau1.CalculatriceBasique
                     break;
                 case 3:
                     Affichage.AfficherSansRetourLigne("Premier nombre :");
-                    premierChiffre = Convert.ToDouble(Console.ReadLine());
+                    premierChiffre =Chiffre();
                     Affichage.AfficherSansRetourLigne("Second nombre :");
-                    secondChiffre = Convert.ToDouble(Console.ReadLine());
+                    secondChiffre = Chiffre();
 
                     calcul = new Calcul(premierChiffre, secondChiffre);
                     resultat = calcul.division();
@@ -77,9 +81,9 @@ namespace Projet.Niveau1.CalculatriceBasique
                     break;
                 case 4:
                     Affichage.AfficherSansRetourLigne("Premier nombre :");
-                    premierChiffre = Convert.ToDouble(Console.ReadLine());
+                    premierChiffre = Chiffre();
                     Affichage.AfficherSansRetourLigne("Second nombre :");
-                    secondChiffre = Convert.ToDouble(Console.ReadLine());
+                    secondChiffre = Chiffre();
 
                     calcul = new Calcul(premierChiffre, secondChiffre);
                     resultat = calcul.Multiplication();

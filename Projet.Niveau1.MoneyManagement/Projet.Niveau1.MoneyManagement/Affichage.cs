@@ -1,14 +1,15 @@
 ﻿
 using static System.Console;
+using System;
 
 namespace Projet.Niveau1.MoneyManagement
 {
     class Affichage
     {
-        #region Affichage Console
+        #region 
         public static void Afficher(string texte)
         {
-            WriteLine(texte);
+          WriteLine(texte);
         }
 
         public static void AfficherSansRetourLigne(string texte)
@@ -23,16 +24,21 @@ namespace Projet.Niveau1.MoneyManagement
             Afficher("----------------------------------------");
             Afficher("Menu du logiciel");
             Afficher("");
-            Afficher("1. Lister le détails des opérations");
-            Afficher("2. Ajouter une opération");
-            Afficher("3. Ajouter une opération régulière");
-            Afficher("4. Supprimer une opération");
-            Afficher("5. Vider le compte");
-            Afficher("6. Quitter le logiciel");
-            Afficher("----------------------------------------");
+            AffichageCouleur("1. Lister le détails des opérations", ConsoleColor.Blue);
+            AffichageCouleur("2. Ajouter une opération", ConsoleColor.Green);
+            AffichageCouleur("3. Ajouter une opération régulière",ConsoleColor.Gray);
+            AffichageCouleur("4. Supprimer une opération", ConsoleColor.Magenta);
+            AffichageCouleur("5. Vider le compte", ConsoleColor.Yellow);
+            AffichageCouleur("6. Quitter le logiciel", ConsoleColor.DarkRed);
+            AffichageCouleur("----------------------------------------", ConsoleColor.White);
         }
         #endregion
 
+        public static void AffichageCouleur(string texte, ConsoleColor couleur)
+        {
+           ForegroundColor = couleur;
+            Afficher(texte);
+        }
         public static bool DemanderSiAutreOperation()
         {
             //TODO : Afficher un message

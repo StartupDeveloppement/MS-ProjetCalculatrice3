@@ -119,9 +119,10 @@ namespace Projet.Niveau1.MoneyManagement
             //Prendre en compte les choix de l'utilisateur, vérifier les saisies
             Affichage.Afficher("----- Ajout d'une opération -----");
             Affichage.Afficher("Date de l'opération : ");
+            Affichage.Afficher("Opération régulière (0 pour non, 1 pour oui)");
             DateTime saisie = new DateTime();
             Affichage.Afficher("Montant de l'opération : ");
-            int montant = 100;
+            double montant = Convert.ToDouble(Console.ReadLine());
             Affichage.Afficher("Opération régulière (0 pour non, 1 pour oui)");
             bool regulier = true;
             Operation operationEnCours = new Operation(saisie, montant, regulier);
@@ -129,10 +130,11 @@ namespace Projet.Niveau1.MoneyManagement
         }
 
         private static void ListerLesOperations()
-        {
+        {   
             if(_compteEnBanque.Count == 0)
             {
-                Affichage.Afficher("Aucune opération disponible, merci de créditer votre compte");
+                Affichage.AffichageCouleur("Aucune opération disponible, merci de créditer votre compte", ConsoleColor.Red);
+                
             }
             else
             {

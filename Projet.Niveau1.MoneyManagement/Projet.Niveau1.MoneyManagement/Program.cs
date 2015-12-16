@@ -2,15 +2,18 @@
 using System;
 using System.Collections.Generic;
 
+
 namespace Projet.Niveau1.MoneyManagement
 {
     class Program
     {
         internal static bool ExitRequested;
         private static List<Operation> _compteEnBanque;
-
+        
+        
         static void Main(string[] args)
         {
+            Console.SetCursorPosition(35, 1);
             Affichage.Afficher("Bonjour !");
             ExitRequested = false;
             _compteEnBanque = new List<Operation>();
@@ -58,6 +61,7 @@ namespace Projet.Niveau1.MoneyManagement
 
         private static void ViderLeCompte()
         {
+          
             _compteEnBanque = null;
             Affichage.Afficher("Le compte est vide, merci de passer à la banque");
         }
@@ -119,13 +123,14 @@ namespace Projet.Niveau1.MoneyManagement
             //Prendre en compte les choix de l'utilisateur, vérifier les saisies
             Affichage.Afficher("----- Ajout d'une opération -----");
             Affichage.Afficher("Date de l'opération : ");
-            Affichage.Afficher("Opération régulière (0 pour non, 1 pour oui)");
-            DateTime saisie = new DateTime();
+            string saisie = Convert.ToString(Console.ReadLine());
+            DateTime date = DateTime.Parse(saisie, System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.AssumeLocal);
+            string dateFormat = date.ToString("d");
             Affichage.Afficher("Montant de l'opération : ");
             double montant = Convert.ToDouble(Console.ReadLine());
             Affichage.Afficher("Opération régulière (0 pour non, 1 pour oui)");
             bool regulier = true;
-            Operation operationEnCours = new Operation(saisie, montant, regulier);
+            Operation operationEnCours = new Operation(date, montant, regulier);
             _compteEnBanque.Add(operationEnCours);
         }
 

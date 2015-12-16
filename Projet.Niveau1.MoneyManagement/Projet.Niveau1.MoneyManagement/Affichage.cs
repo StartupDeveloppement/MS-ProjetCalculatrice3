@@ -21,6 +21,8 @@ namespace Projet.Niveau1.MoneyManagement
         #region Menu
         public static void DisplayMenu()
         {
+           
+            
             Afficher("----------------------------------------");
             Afficher("Menu du logiciel");
             Afficher("");
